@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubo 3D con Translate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            perspective: 1000px;
+        }
+
+        .contenedor {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            transform: rotateX(-25deg) rotateY(35deg);
+        }
+
+        .cara {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            font-weight: bold;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            opacity: 0.9;
+        }
+
+        .frontal {
+            background: rgb(255, 99, 71);
+            transform: translate3d(0, 0, 100px);
+        }
+
+        .trasera {
+            background: rgb(64, 224, 208);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .derecha {
+            background: rgba(255, 217, 0, 0.973);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .izquierda {
+            background: rgb(148, 112, 219);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .superior {
+            background: rgb(50, 205, 50);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .inferior {
+            background: rgb(255, 105, 180);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="cara frontal">1</div>
+        <div class="cara trasera">2</div>
+        <div class="cara derecha">3</div>
+        <div class="cara izquierda">4</div>
+        <div class="cara superior">5</div>
+        <div class="cara inferior">6</div>
+    </div>
+</body>
+</html>
