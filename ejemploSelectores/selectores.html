@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de selectores</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+
+        #hijo>p {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .ejemplo {
+            margin-left: 30px;
+            text-align: center;
+            margin-top: 50px;
+            height: 150px;
+            width: 300px;
+            border: 1px solid rgba(0, 0, 0, 0.247);
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
+        }
+
+        #adyacente p+span {
+            color: red;
+            font-weight: bold;
+        }
+
+        #hermanos p~span {
+            color: green;
+            font-weight: bold;
+        }
+
+        #atributo span[atributo] {
+            color: purple;
+            font-weight: bold;
+        }
+
+        #atributo span[atributo="correcto"] {
+            color: orange;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ejemplo 1">
+        <h3>Ejemplo con selector de hijo</h3>
+        <div id="hijo">
+            <p>Este es hijo directo</p>
+            <div>
+                <p>Este no es hijo directo</p>
+            </div>
+        </div>
+    </div>
+    <div class="ejemplo 2">
+        <h3>Ejemplo con selector adyacente (+)</h3>
+        <div id="adyacente">
+            <p>Hermano1</p>
+            <span>Hermano2</span>
+        </div>
+    </div>
+    <div class="ejemplo 3">
+        <h3>Ejemplo con selector general de hermanos (~)</h3>
+        <div id="hermanos">
+            <p>Hermano1</p>
+            <div><span>No es hermano directo</span></div>
+            <span>Hermano2</span>
+            <span>Hermano3</span>
+        </div>
+    </div>
+    <div class="ejemplo 4">
+        <h3>Ejemplo con selector de atributo [--]</h3>
+        <div id="atributo">
+            <span atributo="value">Texto con atributo</span>
+            <br>
+            <span>Texto sin atributo</span>
+        </div>
+    </div>
+    <div class="ejemplo 5">
+        <h3>Ejemplo con selector de atributo y valor [- = ""]</h3>
+        <div id="atributo">
+            <span atributo="correcto">Texto con atributo y valor correcto</span>
+            <br>
+            <span atributo="incorrecto">Texto con atributo incorrectos</span>
+        </div>
+    </div>
+</body>
+
+</html>
