@@ -1,0 +1,185 @@
+/***** FUENTES *****/
+@font-face {
+    font-family: "miFuente"; /* Define una fuente personalizada */
+    src: url(./miFuente.ttf); /* Ruta de la fuente */
+}
+
+/***** ESTILO GENERAL *****/
+* {
+    box-sizing: border-box; /* Asegura que el padding y el borde estén incluidos en el tamaño total del elemento */
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina los paddings por defecto */
+}
+
+body {
+    background-color: gray; /* Fondo gris */
+    font-family: "miFuente"; /* Usa la fuente personalizada */
+    height: 200vh; /* Altura del cuerpo igual al 200% del viewport */
+}
+
+/***** CONTAINER *****/
+.container {
+    display: flex; /* Usa el modelo de caja flexible */
+    flex-direction: column; /* Organiza los elementos en columna */
+}
+
+/***** HEADER *****/
+header {
+    background-color: white; /* Fondo blanco */
+    color: gray; /* Color del texto gris */
+    padding-block: 5px; /* Espaciado interno vertical */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/***** MAIN *****/
+main {
+    display: flex; /* Usa el modelo de caja flexible */
+    margin-top: 30px; /* Margen superior */
+
+    div {
+        align-items: center; /* Centra los elementos verticalmente */
+        color: transparent; /* Texto transparente */
+        display: flex; /* Usa el modelo de caja flexible */
+        font-size: 1.5rem; /* Tamaño de la fuente */
+        height: 490px; /* Altura de los divs */
+        justify-content: center; /* Centra los elementos horizontalmente */
+        transition: 1s; /* Transición suave de 1 segundo */
+        width: 400px; /* Ancho de los divs */
+    }
+}
+
+/* Efecto al pasar el ratón sobre los divs dentro del main */
+main div:hover {
+    color: white; /* Cambia el color del texto a blanco */
+    flex-grow: 1; /* Hace que el div ocupe todo el espacio disponible */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos específicos para cada div dentro del main */
+#uno {
+    background-color: rgb(255, 189, 66); /* Fondo naranja claro */
+}
+
+#dos {
+    background-color: orange; /* Fondo naranja */
+}
+
+#tres {
+    background-color: rgb(1, 195, 234); /* Fondo azul claro */
+}
+
+#cuatro {
+    background-color: rgb(223, 60, 60); /* Fondo rojo */
+}
+
+/***** FOOTER *****/
+footer {
+    align-items: center; /* Centra los elementos verticalmente */
+    animation: colorChange 5s ease-in-out 0s infinite alternate; /* Animación de cambio de color */
+    color: white; /* Color del texto blanco */
+    display: flex; /* Usa el modelo de caja flexible */
+    flex-direction: column; /* Organiza los elementos en columna */
+    gap: 30px; /* Espacio entre elementos */
+    height: 15vh; /* Altura del footer igual al 15% del viewport */
+    padding-bottom: 15px; /* Espaciado inferior */
+    transition: 2s; /* Transición suave de 2 segundos */
+}
+
+/* Estilos para el input dentro del footer */
+input {
+    border: none; /* Elimina el borde */
+}
+
+/* Efecto al enfocar el input */
+input:focus {
+    border: none; /* Elimina el borde */
+    border-color: white; /* Color del borde blanco */
+    box-shadow: 0 0 7px white; /* Sombra blanca */
+    outline: none; /* Elimina el contorno */
+    transition: 1.5s; /* Transición suave de 1.5 segundos */
+}
+
+/* Efecto cuando el input tiene contenido */
+input:focus:not(:placeholder-shown) {
+    background-color: #23D5AB; /* Fondo verde claro */
+    color: white; /* Color del texto blanco */
+}
+
+/***** SECTION *****/
+section {
+    background-color: white; /* Fondo blanco */
+    height: 100vh; /* Altura igual al 100% del viewport */
+    width: 100%; /* Ancho completo */
+
+    .box {
+        animation: appear linear forwards; /* Animación de aparición */
+        animation-timeline: view(); /* La animación se activa al entrar en la vista */
+        background-color: rgb(242, 196, 242); /* Fondo rosa claro */
+        height: 100px; /* Altura del box */
+        margin: 60px auto; /* Margen superior e inferior, centrado horizontalmente */
+        width: 100%; /* Ancho completo */
+    }
+}
+
+/***** ANIMACIONES *****/
+@keyframes colorChange {
+    0% {
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB); /* Gradiente inicial */
+    }
+
+    25% {
+        background: linear-gradient(-45deg, #E73C7E, #23A6D5, #23D5AB,  #EE7752); /* Gradiente a los 25% */
+    }
+
+    50% {
+        background: linear-gradient(-45deg, #23A6D5, #23D5AB, #EE7752, #E73C7E); /* Gradiente a los 50% */
+    }
+
+    75% {
+        background: linear-gradient(-45deg, #23D5AB, #EE7752, #E73C7E, #23A6D5); /* Gradiente a los 75% */
+    }
+
+    100% {
+        background: linear-gradient(-45deg, #23D5AB, #23A6D5, #E73C7E, #EE7752); /* Gradiente final */
+    }
+}
+
+@keyframes appear {
+    from { 
+        opacity: 0; /* Inicia con opacidad 0 */
+        scale: 0; /* Inicia con escala 0 */
+    }
+
+    to { 
+        opacity: 1; /* Termina con opacidad 1 */
+        scale: 1.28; /* Termina con escala 1.28 */
+    }
+}
+
+/***** RESPONSIVE *****/
+@media (width <= 640px) {
+
+    body {
+        font-size: 2rem; /* Tamaño de la fuente más grande en pantallas pequeñas */
+    }
+
+    main {
+        flex-direction: column; /* Organiza los elementos en columna en pantallas pequeñas */
+
+        div {
+            height: 150px; /* Altura reducida de los divs */
+            width: 100%; /* Ancho completo */
+        }
+    }
+
+    /* Efecto al pasar el ratón sobre los divs en pantallas pequeñas */
+    main div:hover {
+        color: white; /* Cambia el color del texto a blanco */
+        flex-grow: 1; /* Hace que el div ocupe todo el espacio disponible */
+        height: 300px; /* Altura aumentada */
+    }
+
+    footer {
+        gap: 10px; /* Espacio reducido entre elementos */
+    }
+}

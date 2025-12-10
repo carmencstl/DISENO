@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" title="style" />
+    <title>Examen A</title>
+</head>
+<body>
+    <header>
+       
+        <button class="button">+</button>
+       
+        <h1>Examen Recuperación 2DAW DI</h1>
+    </header>
+    <div class="images">
+        <div class="image forest"></div>
+        <div class="image office"></div>
+        <div class="image forest"></div>
+        <div class="image office"></div>
+    </div>
+    <div class="scroll">
+        <img class="roundedImage" id="roundedImage" src="img/img1.jpg"/>
+    </div>
+</body>
+<script>
+
+    window.onscroll = function() {
+        scrollOpacity();
+        console.log(window.scrollY);
+
+
+
+    }
+
+    function scrollOpacity() {
+        let image = document.getElementById("roundedImage");
+     
+        image.style.opacity = 1 - ((window.scrollY*2)/1000);
+
+        if(window.scrollY > 422) image.style.opacity  = 0;
+    
+        
+    }
+
+</script>
+</html>
+

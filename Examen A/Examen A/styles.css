@@ -1,0 +1,342 @@
+/* Declaración correcta de la fuente personalizada */
+@font-face {
+    font-family: 'fuente';
+    src: url('fuente.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'fuente', sans-serif;
+    background-color: lightblue;
+    color: black;
+    line-height: 1.6;
+    padding: 20px;
+    height: 200vh;
+    overflow-x: hidden;
+    text-align: center;
+    font-size: 3rem;
+}
+
+/* Fondo de nieve con animación infinita */
+#nieve {
+    width: 100%;
+    height: 200vh;
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    background-image: url('img/snow-bg.png'); 
+    animation: nieve 20s linear infinite;
+}
+
+#content {
+    bottom: 0;
+    margin: auto;
+    width: 100vw;
+    height: 300vh;
+    background: lightblue;
+    border-radius: 10px;
+}
+
+/* Contenedor de imágenes con Flexbox */
+.imagenes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.imagenes img {
+    width: 100px;
+    max-width: 18vw;
+    opacity: 0;
+    animation: 1s ease forwards;
+}
+
+/* Sombra del muñeco */
+.sombra {
+    width: 350px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.774);
+    margin: -50px auto 50px auto;
+    border-radius: 50%;
+}
+
+/* Muñeco central creado con CSS */
+.cuadrado {
+    width: 400px;
+    height: 400px;
+    background-color: lightseagreen;
+    margin: 100px auto;
+    border-radius: 50px;
+    rotate: 2deg;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    box-shadow: 30px 20px 0px 0px rgb(24, 99, 95);
+    animation: balanceo 2s ease-in-out infinite;
+}
+
+.cuadrado:hover {
+    animation: salto 0.5s ease-in-out;
+}
+
+.cuadrado:active {
+    animation: hacerGrande 0.2s ease-in-out forwards;
+}
+
+/* Ojos del muñeco */
+.ojo1, .ojo2 {
+    width: 40px;
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    margin-top: 50px;
+    animation: parpadeo 5s ease-in-out infinite;
+    overflow: hidden;
+    transform-origin: center;
+}
+
+.ojo1 {
+    margin-right: 20px;
+}
+
+/* Boca del muñeco */
+.boca {
+    width: 300px;
+    height: 200px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10% 10% 50% 50%;
+    position: absolute;
+    bottom: 70px;
+}
+
+/* Animaciones de caída de árboles y muñeco (solo una vez) */
+.imagenes img:nth-of-type(1) { 
+    animation-name: dropInLeft;  
+    animation-delay: 0s; 
+}
+.imagenes img:nth-of-type(3) { 
+    animation-name: dropInLeft;  
+    animation-delay: 0.15s; 
+}
+.imagenes img:nth-of-type(5) { 
+    animation-name: dropInLeft;  
+    animation-delay: 0.30s; 
+}
+.imagenes img:nth-of-type(2) { 
+    animation-name: dropInRight; 
+    animation-delay: 0.45s; 
+}
+.imagenes img:nth-of-type(4) { 
+    animation-name: dropInRight; 
+    animation-delay: 0.60s; 
+}
+.imagenes img:nth-of-type(6) { 
+    animation-name: dropInRight; 
+    animation-delay: 0.75s; 
+}
+
+/* Input del formulario */
+input {
+    width: 300px;
+    height: 40px;
+    padding: 8px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    transition: background 500ms ease, color 500ms ease, box-shadow 500ms ease;
+}
+
+input::placeholder {
+    font-size: 1.5rem;
+    font-family: 'fuente', sans-serif;
+}
+
+/* Sombreado al hacer focus */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+/* Cambio de colores cuando el placeholder no se muestra (hay texto) */
+input:not(:placeholder-shown) {
+    background: #d6e2e9;
+    color: #fefefe;
+}
+
+/* Rectángulo que aparece con scroll */
+.rectangulo {
+    width: 80vw;
+    height: 300px;
+    background-color: #616161af;
+    margin: 100px auto;
+    animation: aparecer linear forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+/* ============================================
+   KEYFRAMES - ANIMACIONES
+   ============================================ */
+
+/* Caída desde la izquierda */
+@keyframes dropInLeft {
+    0% {
+        transform: translate(-30px, -140vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* Caída desde la derecha */
+@keyframes dropInRight {
+    0% {
+        transform: translate(30px, -140vh);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+/* Animación infinita de nieve */
+@keyframes nieve {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+/* Parpadeo de ojos */
+@keyframes parpadeo {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    93%, 97% {
+        transform: scaleY(0);
+    }
+}
+
+/* Balanceo infinito del muñeco */
+@keyframes balanceo {
+    0% {
+        transform: rotate(2deg);
+    }
+    50% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(2deg);
+    }
+}
+
+/* Salto en hover (transformación en eje Y) */
+@keyframes salto {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Hacer grande en active (transformación en escala) */
+@keyframes hacerGrande {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* Aparición del rectángulo con scroll */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   RESPONSIVE - ANCHURA MENOR DE 760px
+   ============================================ */
+@media (max-width: 760px) {
+    .imagenes {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    /* Ocultar inicialmente todas las imágenes */
+    .imagenes img {
+        display: none;
+        width: 100px;
+        max-width: 40vw;
+    }
+
+    /* Mostrar solo el primer árbol */
+    .imagenes img:first-child {
+        display: block;
+        width: 120px;
+        max-width: 40vw;
+        transition: transform 250ms ease;
+        cursor: pointer;
+        opacity: 1;
+        margin-bottom: 6px;
+    }
+
+    /* Al hacer hover sobre el primer árbol, mostrar todos */
+    .imagenes:hover img {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Expandir el primer árbol al hover */
+    .imagenes:hover img:first-child {
+        transform: scale(1.6);
+    }
+
+    /* Reducir márgenes en móvil */
+    .cuadrado { 
+        margin: 20px auto;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .sombra { 
+        margin: -20px auto 20px auto;
+        width: 280px;
+    }
+    
+    .boca {
+        width: 220px;
+        height: 150px;
+        bottom: 50px;
+    }
+}
