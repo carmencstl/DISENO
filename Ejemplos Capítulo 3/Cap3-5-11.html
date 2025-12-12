@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		:root {
+			--size: 50px;
+		}
+
+		.element {
+
+			
+			width: var(--size);
+			height: var(--size);
+			background-color: aquamarine;
+			offset-path: polygon(50px 50px, 350px 0, 350px 100px, 0 100px); 
+			/* offset-path: ray(-180deg); */ 
+			animation: move 2s linear infinite alternate ;
+		}
+
+		@keyframes move {
+			0% {
+				offset-distance: 0;
+				offset-rotate: 90deg;
+			}
+
+			100% {
+				offset-distance: 100%;
+				offset-rotate: 0deg;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="element"></div>
+</body>
+
+</html>

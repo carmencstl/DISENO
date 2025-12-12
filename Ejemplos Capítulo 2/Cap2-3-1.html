@@ -1,0 +1,40 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Selector css3</title>
+
+	<style>
+		p::first-line {
+			color: rgb(200, 76, 76);
+			font-size: 20px;
+		}
+
+		p::first-letter {
+			background-color: rgb(233, 232, 232);
+			font-size: 2em;
+		}
+	
+	</style>
+
+</head>
+
+<body>
+	
+	<p>Lorem sit amet, consectetuer adipiscing elit. Praesent odio sem, tempor quis, <em>1auctor eu</em>, tempus at,
+		enim. Praesent nulla ante, <em>2ultricies</em> id, porttitor ut, pulvinar quis, dui.</p>
+
+	<p>Lorem <span><em>2ipsum dolor</em></span> sit amet, consectetuer adipiscing elit.
+		Praesent odio sem, tempor quis, <em>auctor eu</em>, tempus at, enim.</p>
+	<div>
+		<p>Lorem <span><em>3ipsum dolor</em></span> sit amet, consectetuer adipiscing elit.
+			Praesent odio sem, tempor quis, <span><em>4auctor eu</em><span>, tempus at, enim.</p>
+	</div>
+
+
+
+</body>
+
+</html>

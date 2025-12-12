@@ -1,0 +1,89 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ejemplo 6.4.2.8 Ejemplo de evento transitionend </title>
+
+<style> 
+  
+	#caja {
+	  width: 100px;
+	  height: 100px;
+	  background: blue;
+	  position: relative;
+	  transition: all 4s;
+	  box-shadow: 2px 2px 2px #888;
+		}
+
+	#caja.Transition { 
+	  background: green; 
+	  width: 200px;
+	    
+	}
+	
+	#caja.TransitionEnd {
+	  background: red;
+	  width: 300px;
+	}
+	#nombre-evento{
+	  font-size: 1.5em;
+	  font-weight: bold;
+	}
+
+ </style>
+
+ 
+ 
+</head>
+
+<body>
+	<p><b>Ejemplo 6.4.2.8 </b>Ejemplo de evento transitionend </p>
+
+	<h1>transition event</h1>
+
+	<p>Haz click para animar el cubo</p>
+
+	<div id="caja"></div>
+
+	<p>Nombre del evento: <span id="nombre-evento"></span></p>
+
+	
+
+
+
+</body>
+<script type="text/javascript">
+
+ 	init = function() {
+
+	   
+	    nombreEvento = document.getElementById('nombre-evento');
+		caja = document.getElementById('caja');
+		
+    	FinTransicion = function( evento ) {
+	        
+	        evento.target.className = 'TransitionEnd';
+	        console.log(evento.type);
+	        nombreEvento.textContent = evento.type;
+	        
+     	},
+      
+    	Clickraton = function( event ) {
+
+	        /*Asignamos la clase "transition" al elemento que ha realizado el evento "box" */
+			event.target.className = 'Transition';
+			console.log(event.type);
+			nombreEvento.textContent = event.type;
+	        event.target.addEventListener( 'transitionend', FinTransicion, false );
+        
+        };
+  
+  		caja.addEventListener( 'click', Clickraton, false );
+  
+  	};
+
+ 	 window.addEventListener( 'DOMContentLoaded', init, false );
+
+
+ </script>
+</html>

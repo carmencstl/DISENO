@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+     
+      body, html {
+        height: 100%;
+        margin: 0;
+        color: #777;
+      }
+      div{
+        color:#ddd;
+        background-color:#282E34;
+        text-align:center;
+        padding:50px 80px;
+        text-align: justify;
+      }
+
+      
+      h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #bbb;
+        text-align:center;
+      }
+
+      [class^="bgimg"]{  
+        min-height: 400px;
+        background-position: center;
+        background-size:cover;
+        background-attachment: fixed;
+
+      }
+
+      .bgimg-1 {
+        background-image: url("imagenes/img1.jpg");
+       
+        
+      }
+
+      .bgimg-2 {
+        background-image: url("img/img2.jpg");
+        
+      }
+
+      .bgimg-3 {
+        background-image: url("img/img3.jpg");
+        
+      }
+
+      .caption {
+        position: absolute;
+        left: 25%;
+        top: 50%;
+        width: 50%;
+        text-align: center;
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 25px;
+        letter-spacing: 15px;
+        
+      }
+      /* Desactivar el paralaje cuando sean dispositivos móbiles */ 
+      @media (max-device-width: 1366px){ 
+        [class^="bgimg"]{ background-attachment:scroll; }
+          }
+
+
+    
+    
+  </style>
+</head>
+<body>
+
+    <div class="bgimg-1">
+      <div class="caption">
+        <span class="border">PARALLAX DEMO</span>
+      </div>
+    </div>
+
+    <div >
+      <h3 >Parallax Demo</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+
+    <div class="bgimg-2">
+      <!-- /* Background de la imagen dos */ -->
+    </div>
+
+    <div >
+      <div >
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.</p>
+      </div>
+    </div>
+
+    <div class="bgimg-3">
+     <!--  /* Background de la imagen tres */ -->
+    </div>
+
+    <div >
+      <div >
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation
+      </div>
+    </div>
+
+    <div class="bgimg-1">
+     <!--  /* Background de la imagen cuatro */ -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .zombi{
+           margin: auto;
+            width: 155px;
+            height: 194px;
+            background-image: url("img/zombi-sprite.png");
+            animation: andarZombi 1s steps(5) infinite;
+        }
+        @keyframes andarZombi {
+
+            from{background-position: 0;}
+            to{background-position: -780px;}
+            
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ejemplo de Sprite</h1>
+
+    <div class="zombi"></div>
+    
+</body>
+</html>

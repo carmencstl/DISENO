@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			background-color: aquamarine;
+		}
+
+		@view-transition {
+			navigation: auto;
+		}
+
+		.container {
+			view-transition-name: page;
+		}
+
+		:view-transition-old(page) {
+			animation: fade 6s linear;
+		}
+
+		:view-transition-new(page) {
+			animation: fade 6s linear;
+		}
+
+		@keyframes fade {
+			0% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			100% {
+				opacity: 0;
+				transform: translateY(50px);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Página 2</h2>
+	<p>Lorem <a href="Cap3-7-1.html">Enlace </a>ipsum dolor sit amet consectetur, adipisicing elit. Eius
+		praesentium dolore nemo dicta quam voluptas
+		amet ut et neque, ad iure quisquam quo veritatis, dolores ratione esse architecto ex saepe!</p>
+
+</body>
+
+</html>

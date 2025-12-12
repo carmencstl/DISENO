@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ejemplo 6-4-2-9</title>
+
+	<style> 
+		
+		p{ padding-left:60px }
+		
+		#bola{
+			border-radius:50px;
+			box-shadow: 2px 2px 4px #888;
+			width:50px;
+			height:50px;
+			background:#c00;
+			position:absolute;
+			top:0;
+			left:0;
+			transition: all 2s;  
+		}
+		#coordenadas{
+			 font-size: 1.2em;
+	  		 font-weight: bold;
+		}
+
+		
+	</style>
+	
+</head>
+<body>
+
+	<p><b>Ejemplo 6-4-2-9</b> Ejemplo de Transiciones y JavaScript </p>
+
+	<p>Haz click en cualquier sitio para mover la bola </p>
+	<p>Coordenadas: <span id="coordenadas"></span></p>
+	<div id="bola"></div>
+
+</body>
+<script type="text/javascript">
+		 
+		init = function(){
+		/* const init = () => { */
+
+			let b = document.getElementById("bola");
+			let coord = document.getElementById("coordenadas");
+
+		    document.addEventListener('click', function(ev){
+			/* document.addEventListener("pointerdown", (ev) => { */
+			
+			   /*  console.log(ev.clientX,ev.clientY); */
+			    b.style.left = (ev.clientX-25)+'px';
+			    b.style.top = (ev.clientY-25)+'px';
+			    coord.textContent = b.style.top + " " +b.style.left;
+
+			    console.log("x=", b.style.left,"y=", b.style.top);
+		    
+			},false); 
+	   }
+
+		window.addEventListener( 'DOMContentLoaded', init, false );
+	
+	</script>
+</html>
+
+
+

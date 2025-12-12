@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo Flex-Box</title>
+
+	<style type="text/css">
+
+		.flex-container{
+			width: 250px;
+			height:150px;
+			padding:5px;
+			margin: 10px auto;
+			background-color:#124678;
+			display:-webkit-flex; 
+			display: -ms-flexbox; 
+			display: flex;
+		}
+		.flex-item{
+			display: inherit;
+			width:50px;
+			background-color:#ccc;
+			margin:5px;
+		}
+
+		.flex-container .flex-item *{
+			width:100%; 
+			text-align:center; 
+			-webkit-align-self: center;
+			-ms-flex-item-align: center;
+			align-self: center;  
+			margin:10px;}
+
+	.flex-item:nth-of-type(3){ order:-1; background-color:yellow;}
+	.flex-item:nth-of-type(1){ order:1; background-color:tomato;}
+
+	.flex-container.row-reverse{ 
+	    -webkit-flex-direction: row-reverse;
+		-ms-flex-direction: row-reverse;
+		flex-direction: row-reverse; 
+	}
+
+
+	</style>
+</head>
+<body>
+   <h1 class="title"> Ejemplos de la propiedad Order </h1>
+   <div class="left">
+     <h3>.flex-item:nth-of-type(4){ order:-1; background-color:yellow;}</h3>
+	<h3>.flex-item:nth-of-type(1){ order:1; background-color:tomato;}</h3>
+      
+
+      <div class="flex-container">
+	    <div class="flex-item"><p>1</p></div>
+	    <div class="flex-item"><p>2</p></div>
+	    <div class="flex-item"><p>3</p></div>
+	    <div class="flex-item"><p>4</p></div>
+	</div>
+	<h1>Reverse</h1>
+	<div class="flex-container row-reverse">
+	    <div class="flex-item"><p>1</p></div>
+	    <div class="flex-item"><p>2</p></div>
+	    <div class="flex-item"><p>3</p></div>
+	    <div class="flex-item"><p>4</p></div>
+	</div>
+
+
+
+	   
+   </div>
+
+</body>
+</html>

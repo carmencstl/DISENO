@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		body {
+			font-size: 1.2rem;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		p{
+			padding: 200px;
+		}
+
+		.box {
+			width: 250px;
+			height: 250px;
+			margin: auto;
+			border-radius: 5%;
+			box-shadow: 5px 5px 10px #888;
+			background: indigo;
+			animation: change linear ;
+			animation-timeline: view();
+			/* animation-timeline: view(block 150px); */
+			
+		}
+
+		@keyframes change {
+			from {
+				scale: 0;
+				opacity: 0
+			}
+
+			to {
+				scale: 1;
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h2>Ejemplo Scroll</h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, obcaecati iste deleniti architecto eos id aspernatur aperiam, quidem atque ratione est sint reiciendis soluta molestiae itaque, eaque earum assumenda culpa?</p>
+
+	<div class="box"></div>
+
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque tempora modi animi laboriosam. Officia, architecto quia eligendi officiis labore harum, culpa veniam repellat, nisi assumenda suscipit! Placeat a illum quia.</p>
+
+	<div class="box"></div>
+
+	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius praesentium dolore nemo dicta quam voluptas amet ut et neque, ad iure quisquam quo veritatis, dolores ratione esse architecto ex saepe!</p>
+</body>
+
+</html>

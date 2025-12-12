@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style> 
+	
+	div{
+		width:100px;
+		height:50px;
+		background-color:#ED8029;
+		border-radius: 5px;
+		padding: 5px;
+		margin: 5px 0px;
+		color:white;
+		font-weight:bold;
+		transition:width 2s; /* Safari */
+		}
+
+		#div1 {transition-timing-function: linear;}
+		#div2 {transition-timing-function: ease;}
+		#div3 {transition-timing-function: ease-in;}
+		#div4 {transition-timing-function: ease-out;}
+		#div5 {transition-timing-function: ease-in-out;}
+		#div6 {transition-timing-function:cubic-bezier(.21,.82,.53,-0.67);}
+
+		div:hover
+		{
+			width:300px;
+		}
+	</style>
+</head>
+<body>
+
+	<p><b>Práctica 3-2-4</b> Ejemplo de transition-timing-function</p>
+
+	<div id="div1" >linear</div>
+	<div id="div2" >ease </div>
+	<div id="div3" >ease-in</div>
+	<div id="div4" >ease-out</div>
+	<div id="div5" >ease-in-out</div>
+	<div id="div6" >cube_bezier</div>
+
+
+</body>
+</html>

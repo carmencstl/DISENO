@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow: hidden;
+        }
+
+        .snap-container {
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-type: x mandatory;
+            overflow-x: scroll;
+
+
+        }
+
+        .snap-section {
+            min-width: 100vw;
+            scroll-snap-align: start;          
+            
+        }
+
+        [class="snap-section"]:nth-child(1) {
+            background-color: #d1c4e9;
+        }
+
+        [class="snap-section"]:nth-child(2) {
+            background-color: #c8e6c9;
+        }
+
+        [class="snap-section"]:nth-child(3) {
+            background-color: #b3e5fc;
+        }
+
+        h1 {
+          
+            text-align: center;
+            color: white;
+            width: 100%;
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="snap-container">
+        <div class="snap-section">
+            <h1>Sección 01</h1>
+
+        </div>
+        <div class="snap-section">
+            <h1>Sección 02</h1>
+
+        </div>
+        <div class="snap-section">
+            <h1>Sección 03</h1>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

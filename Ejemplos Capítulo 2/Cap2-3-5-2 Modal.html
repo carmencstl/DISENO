@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title> :target Trick - Modal</title>
+
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+
+	<style>
+		:root {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		h3 {
+			text-align: center;
+		}
+
+		#modal {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			background: rgba(0, 0, 0, 0.8);			
+			align-content: center;
+			z-index: -1;
+			opacity: 0;
+
+		}
+
+		.modal__info {
+			width: 70%;
+			background: #fff;
+			padding: 20px;
+			text-align: center;
+			margin: 100px auto;
+
+		}
+
+		#modal:not(:target) {
+			opacity: 0;
+			transition: 1s;
+		}
+
+
+		#modal:target {
+
+			opacity: 1;
+			z-index: 1;
+			transition: 1s;
+		}
+
+		a {
+			text-decoration: none;
+			display: block;
+			text-align: center;
+			color: #007bff;
+			font-weight: bold;
+		}
+
+		/* 	[href $="pdf"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c1";
+
+		}
+		[href $="png"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c5";
+
+		}
+		[href $="tml"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c9";
+
+		}
+		[href $="jpg"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f400";
+
+		} */
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<div>
+			<h3>Modal con :target</h3>
+			<a href="#modal">MODAL</a>
+		</div>
+	</header>
+
+	<!-- <div >
+		<ul>
+			<li><a href="nombre.pdf"> Documento Pdf </a>
+			</li>
+			<li><a href="nombre.html"> Enlace web </a>
+			</li>
+			<li><a href="nombre.png"> Incono </a></li> 
+			
+		</ul>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vitae dolorum nemo exercitationem dolores magnam maiores architecto aliquam quibusdam est dignissimos ullam veritatis nobis cumque delectus, beatae iusto consequatur quae.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vitae dolorum nemo exercitationem dolores magnam maiores architecto aliquam quibusdam est dignissimos ullam veritatis nobis cumque delectus, beatae iusto consequatur quae.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit vitae dolorum nemo exercitationem dolores magnam maiores architecto aliquam quibusdam est dignissimos ullam veritatis nobis cumque delectus, beatae iusto consequatur quae.</p>
+
+	</div> -->
+
+	<div id="modal">
+
+		<div class="modal__info">
+
+			<h2>Modal</h2>
+
+			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et aspernatur, praesentium voluptate architecto
+				quo ad possimus eius. Soluta sequi minus iusto, labore officia, voluptatum molestiae perspiciatis ad
+				similique doloremque quod!</p>
+			<a href="#"><i class="fa fa-times"></i></a>
+
+		</div>
+
+
+	</div>
+
+
+
+</body>
+
+</html>

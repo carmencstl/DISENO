@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Las pseudo-clases :link :visited :focus ...</title>
+
+		<style>
+
+			a:visited { 	color: green; }
+			a:link 	  { 	color: red; }
+			a:hover   { 	background-color: black; 
+ 					   		color: white; 
+			}
+			a:active  { 	background-color: green; 
+  						    color: white; 
+			}
+			input:focus {
+							background-color: yellow;
+			}
+
+			input:focus:hover {
+							background-color: red;
+							font-size: 1.1em;
+			}
+			
+		
+		</style>
+    
+	</head>
+
+	<body>
+        
+        <h1>Las pseudo-clases :link :visited :focus ... </h1>
+        <p><a href="http://www.google.com"> Enlace a Google </a></p>
+        <p><a href="http://www.elmundo.com"> Enlace a El mundo </a></p>
+
+        <input value="Texto 1" size="8"  type="text">
+        <input value="Texto 2" size="8"  type="text">
+        <input value="Texto 3" size="8"  type="text">
+        <input value="Texto 4" size="8"  type="text">
+
+
+	</body>
+</html>
+
+

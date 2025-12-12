@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd"
+    >
+<html lang="es">
+<head>
+    <title>Probando degradado CSS 3</title>
+	<style type="text/css">
+	div{
+		border: 1px solid #000;
+		padding:10px;
+		margin: 20px;
+		height: 130px;
+		width: 230px;
+		float: left;
+	}
+	.degradado1{
+		background: -webkit-radial-gradient(#0f0, #06f);
+		
+	}
+	.degradado2{
+		background: -webkit-radial-gradient(top left, #fff, #f66);
+		
+	}
+	.degradado3{
+		background: -webkit-radial-gradient(50px 100px, #fff, #000);
+		
+	}
+	.degradado4{
+		background: -webkit-radial-gradient(center,circle, #00f, #000 50%);
+		
+	}
+	.degradado5{
+		background: -webkit-radial-gradient(#66f, #f80, #ffc);
+		
+	}
+	.degradado6{
+		background: -webkit-radial-gradient(ellipse cover, #66f, #f80, #ffc);
+		 /*cover ocuparia el 100% */
+		
+	}
+	.degradado7{
+		background: -webkit-radial-gradient(10% ,  circle closest-corner, #fff 60%, #f80 85%, #ffc , #ffc ); 
+		/* 10% indicaría el centro de la elipse en el primer 10% de la capa, y closest-side se expande en forma de elipse hasta completarse en el lado más cercano
+		farthest-side
+		*/
+		
+	}
+	.degradado8{
+		background: -webkit-radial-gradient( 10%, ellipse farthest-corner, #66f 60%, #f80 85%, #ffc);
+		/* farthest-corner Se expande en forma de elipse hasta completarse en la esquina más lejana*/
+	}
+	.degradado9{
+		background: -webkit-radial-gradient(20px 100px, 30% 80%,  #fff, #666, #66f); 
+		/* 20px , 100px son las coordenadas x,y. 30%, 80% son la anchura y altura de mi círculo */
+		
+	}
+	.degradado10{
+		background: -webkit-radial-gradient(top left, 150px 300px, #ffc, #f96, #963, #630);
+		
+	}
+	.degradado11{
+		background: -webkit-radial-gradient(80% 80%, circle, red, blue 50px, red);
+		
+	}
+	.degradado12{
+		background: -webkit-radial-gradient(left, 200px 200px, #f00 20%, #f80, #ff0, #0f0, #00f, #60f, #c0f);
+		
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="degradado1"></div>
+	<div class="degradado2"></div>
+	<div class="degradado3"></div>
+	<div class="degradado4"></div>
+	<div class="degradado5"></div>
+	<div class="degradado6"></div>
+	<div class="degradado7"></div>
+	<div class="degradado8"></div>
+	<div class="degradado9"></div>
+	<!--<div class="degradado10"></div>
+	<div class="degradado11"></div>
+	<div class="degradado12"></div> -->
+</body>
+</html>

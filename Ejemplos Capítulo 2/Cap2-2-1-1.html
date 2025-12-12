@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* Variables globales de colores */
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --white-color:#e7e5e5;           
+
+            /* Variables globales de fuente y tamaño */
+          
+            --font-family: 'Arial', sans-serif;
+            --button-padding: 10px 20px;
+            --border-radius: 4px;
+
+            /* Variables para sombras */
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        button {
+           
+            padding: var(--button-padding);
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ;
+        }
+
+        /* Botón primario */
+        .button-primary {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .button-primary:hover {
+            background-color: color-mix(in srgb, var(--primary-color), white 25%);
+            transform: translateY(-2px);
+        }
+
+        /* Botón secundario */
+        .button-secondary {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+        }
+
+        .button-secondary:hover {
+            background-color: color-mix(in srgb, var(--secondary-color), white 25%);
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+
+<body>
+    <button class="button-primary">Primary Button</button>
+    <button class="button-secondary">Secondary Button</button>
+  
+
+</body>
+
+</html>

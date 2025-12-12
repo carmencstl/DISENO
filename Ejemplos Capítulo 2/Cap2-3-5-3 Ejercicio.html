@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>The :target Trick - Slide-out Menu</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/css/all.min.css">
+
+	
+	<style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            background-color: rgba(255, 252, 252, 0.1);
+			margin: 50px;
+        }
+		#nav {
+			padding: 20px;
+			text-align: center;
+			position: fixed;
+			height: 100%;
+			top: 0;
+			width: 80%;
+			max-width: 400px;
+			background: rgb(255, 219, 58);
+			box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+            font-size: 1.5em;
+			left: -100%;
+			transition:  1.5s;
+            
+		}
+
+		/* #nav:not(:target) {
+			left: -100%;
+			transition:  1.5s;
+			
+		} */
+
+		#nav:target {
+			left: 0;
+			transition:  1s;
+		}
+        div > a{
+           
+            font-size: 1.5em;
+        }
+
+		[href $="pdf"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c1";
+
+		}
+		[href $="png"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c5";
+
+		}
+		[href $="tml"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f1c9";
+
+		}
+		[href $="jpg"]:after{
+			font-family: "Font Awesome 5 Free";
+			content:"\f400";
+
+		}
+	</style>
+</head>
+<body>
+
+	<header>
+		<div class="wrapper">
+			<a href="#nav" ><i class="fa-solid fa-bars"></i></a>
+		    <h1>Ejercicio Selectores </h1>
+		</div>
+	</header>
+
+	<div >
+
+	 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error odit obcaecati amet omnis perspiciatis id deserunt, inventore quia pariatur, similique officiis quos ducimus laborum doloribus? Possimus dolore amet tempore perferendis?</p>
+	 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error odit obcaecati amet omnis perspiciatis id deserunt, inventore quia pariatur, similique officiis quos ducimus laborum doloribus? Possimus dolore amet tempore perferendis?</p>
+	<h3>font-family: "Font Awesome 5 Free";</h3>
+	 <ul>
+        <li><a href="nombre.pdf"> Documento Pdf </a>
+        </li>
+        <li><a href="nombre.html"> Enlace web </a>
+        </li>
+        <li><a href="nombre.png"> Incono </a></li> 
+		
+    </ul>
+	
+	
+	</div>
+
+	<nav id="nav">
+		<a href="#" aria-label="Close Navigation"><i class="fa fa-times"></i></a>
+			
+	</nav>
+
+
+</body>
+</html>

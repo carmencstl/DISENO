@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilo para los artículos que contienen una imagen */
+        .article:has(img) {
+            
+            background-color: #f00f0f;
+        }
+
+        /* Variables CSS globales */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #f8f9fa;
+            --border-color: #dee2e6;           
+            font-family: Arial, sans-serif;   
+          
+          
+        }
+
+        /* Estilo para los artículos */
+        .articles {
+          
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: var(--background-color);
+            border-radius: 8px;
+        }
+
+        /* Estilos individuales para cada artículo */
+        .article {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* Estilo para la imagen del artículo */
+        .article__image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: var(--box-shadow);
+        }
+
+      
+    </style>
+</head>
+
+<body>
+    <div class="articles">
+        <article class="article">
+            <h2>Article 1</h2>
+            <p>This is a simple article without an image.</p>
+        </article>
+        <article class="article">
+            <h2>Article 2</h2>
+            <img src="Img/img-sombra.png" alt="Image for Article 2">
+            <p>This article has an image.</p>
+        </article>
+        <article class="article">
+            <h2>Article 3</h2>
+            <p>This is another article without an image.</p>
+        </article>
+    </div>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Selector Target</title>
+	<link rel="stylesheet" href="">
+
+	<style type="text/css">
+		div {
+			display: inline-block;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 1.2rem;
+			margin: 20px auto;
+			width: 400px;
+			height: 200px;
+			border: 1px solid #dedede;
+			border-radius: 5px;
+			text-align: center;
+			padding-top: 50px;
+
+
+		}
+
+		:target {
+
+			border: 2px solid #d5d5d5;
+			background-color: rgb(252, 221, 194);
+			box-shadow: 0 0 15px #888;
+			width: 410px;
+			height: 210px;
+
+		}
+
+		.styled-link {
+			text-decoration: none;
+			display: inline-block;
+			font-family: Arial, Helvetica, sans-serif;			
+			color: #007bff;			
+			font-weight: bold;			
+			transition: color 0.3s ease, border-bottom 0.3s ease;			
+			border-bottom: 2px solid transparent;
+			
+		}
+
+		.styled-link:hover {
+			color: #0056b3;
+			
+			border-bottom-color: #0056b3;
+		
+		}
+
+		.styled-link:active {
+			color: #003d80;
+			
+		}
+	</style>
+
+
+</head>
+
+<body>
+
+	<div id="primero">Primero</div>
+	<div id="segundo">Segundo</div>
+	<div id="tercero">Tercero</div>
+
+	<a href="#primero" class="styled-link">Primero</a>
+	<a href="#segundo" class="styled-link">Segundo</a>
+	<a href="#tercero" class="styled-link">Tercero</a>
+	<!-- a[href=#]*3 -->
+
+
+
+</body>
+
+</html>

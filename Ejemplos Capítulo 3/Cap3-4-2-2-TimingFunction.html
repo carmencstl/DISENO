@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style> 
+div
+	{
+	width:100px;
+	height:50px;
+	background-color:#ED8029;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px 0px;
+	color:white;
+	font-weight:bold;
+	animation-name: animacion;
+	animation-iteration-count:infinite;
+	animation-direction: alternate;
+	animation-duration: 6s;
+	
+	
+	}
+
+	#div1 {animation-timing-function: linear;}
+	#div2 {animation-timing-function: ease;}
+	#div3 {animation-timing-function: ease-in;}
+	#div4 {animation-timing-function: ease-out;}
+	#div5 {animation-timing-function: ease-in-out;}
+	#div6 {animation-timing-function:cubic-bezier(0.6, 0.1, 0.15, 0.8);}
+
+	@keyframes animacion {
+		0%{
+			width:100px;
+
+		}
+		50%{
+			background-color: blue;
+		}
+		100%{
+			width: 400px;
+			background-color: red;
+		}
+
+	}
+
+
+
+
+</style>
+</head>
+<body>
+
+<h3> Timing-function</h3>
+
+<div id="div1" >linear</div>
+<div id="div2" >ease </div>
+<div id="div3" >ease-in</div>
+<div id="div4" >ease-out</div>
+<div id="div5" >ease-in-out</div>
+<div id="div6" >cube_bezier</div>
+
+
+</body>
+</html>

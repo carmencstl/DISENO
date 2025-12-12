@@ -1,0 +1,112 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax | Efecto Mouse Move</title>
+    
+    <style>
+        body{
+            background-image: url(img/parallax0.png);
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+            
+        }
+        .objeto{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 110vw;
+            height: 110vh;
+            
+           /*  max-width: 102vw;
+            max-height: 102vh;
+            min-height: 97vh;
+            min-width:97vw ;  */
+           
+           /*  transition: 0.3s; */
+           /* transform: translate(-50%, -50%); */ 
+            
+        }
+        .container{
+            overflow:hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;          
+
+        }
+       /*  footer{
+            width: 100vw;
+            height: 20vh;
+            transform: translate(0,-80px);
+            background-color: #210002;
+        } */
+       
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <img src="img/parallax1.png" class="objeto" data-value="-2" >
+        <img src="img/parallax3.png" class="objeto" data-value="-4">
+        <img src="img/parallax4.png" class="objeto" data-value="-6" >
+        <img src="img/parallax5.png" class="objeto" data-value="-10">
+        <img src="img/parallax6.png" class="objeto" data-value="-12" >
+        <img src="img/parallax7.png" class="objeto" data-value="-14" >
+        <img src="img/parallax8.png" class="objeto" data-value="-16" >
+       
+    </div>
+    <footer></footer>
+
+    <script type="text/javascript">
+
+        document.addEventListener("mousemove", parallax);
+        document.addEventListener("wheel", zoom);
+
+                       
+
+        function parallax(e) {
+
+            document.querySelectorAll(".objeto").forEach(
+                
+                function (capa) {
+                    console.log(e.clientX, e.clientY);
+                
+                    var valorMovimiento = capa.getAttribute("data-value");
+                    var x = (e.clientX * valorMovimiento) / 250;                
+                    var y = (e.clientY * valorMovimiento) / 250;
+                    console.log(x,y);
+                    capa.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            });
+        
+        }
+
+        function zoom(e) {
+
+            
+            document.querySelectorAll(".objeto").forEach(function (mover) {
+                
+                var valorMovimiento = mover.getAttribute("data-value");
+                mover.style.width = mover.offsetWidth + parseInt(valorMovimiento)* e.deltaY /100;
+                mover.style.height =mover.offsetHeight + parseInt(valorMovimiento)* e.deltaY /100;
+                //console.log(mover.offsetWidth + (parseInt(valorMovimiento)* e.deltaY /100));
+                
+                console.log(mover.offsetWidth + parseInt(valorMovimiento)* e.deltaY /100 );
+                // mover.style.width = (mover.style.height + e.deltaY /50 )+ "px"  ;
+                //mover.style.height = (mover.style.height + e.deltaY /50 )+ "px"  ;
+               // mover.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            });
+        }
+
+
+    </script>
+
+</body>
+
+</html>

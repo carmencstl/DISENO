@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Animación con transiciones</title>
+<style> 
+	div
+	{
+		width:100px;
+		height:50px;
+		background-color:#ED8029;
+		border-radius: 5px;
+		padding: 5px;
+		margin: 5px 0px;
+		color:white;
+		font-weight:bold;
+		transition-property:width, color ;
+		transition-duration:3s,2s;
+		transition-timing-function: cubic-bezier(.84,1.63,0,-0.67);
+		
+		/*transition-timing-function: cubic-bezier(0.6, 0.1, 0.15, 0.8);
+		transition-timing-function:ease;
+		-webkit-transition:width 2s;   */
+	}
+
+	div:hover
+	{
+		width:300px;
+		color:  red;
+		background-color:#029;
+	
+	}
+ </style>
+</head>
+
+<body>
+	<p> Ejemplo de Transición </p>
+
+	<div>Transición</div>
+	
+</body>
+</html>

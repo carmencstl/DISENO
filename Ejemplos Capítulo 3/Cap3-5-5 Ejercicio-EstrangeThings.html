@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: '*';
+  
+  src: url("font/BenguiatBold.ttf");
+}
+
+
+body{
+  background-color: #222222;
+}
+
+#container{
+  width:500px;
+  margin:auto;
+}
+
+p{
+  text-align:center;
+  font-size:5em;
+  margin:20px 0 20px 0; 
+  transition: color 1s;
+  color:#FF1177;
+  font-family:Benguiat;
+}
+
+p:hover{
+  animation: neon1 1.5s ease-in-out infinite alternate; 
+  color:#ffffff; 
+}
+
+@keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff,
+               0 0 20px  #fff,
+               0 0 30px  #fff,
+               0 0 40px  #FF1177,
+               0 0 70px  #FF1177,
+               0 0 80px  #FF1177,
+               0 0 100px #FF1177,
+               0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+               0 0 10px #fff,
+               0 0 15px #fff,
+               0 0 20px #FF1177,
+               0 0 35px #FF1177,
+               0 0 40px #FF1177,
+               0 0 50px #FF1177,
+               0 0 75px #FF1177;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div id="container">  
+        <p>STRANGER THINGS</p>
+    </div>
+</body>
+</html>

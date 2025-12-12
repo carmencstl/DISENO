@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Contenedor principal */
+        .card {
+            background-color: #f4f4f9;
+            margin: 50px auto;
+            width: 500px;
+            padding: 20px;
+            box-shadow: 3px 3px 5px #c4c4c4;
+            border-radius: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            
+
+            /* Anidamos elementos internos */
+            h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            p {
+                font-size: 1em;
+                color: #666;
+                
+            }
+
+            /* Pseudoclase para hover */
+            &:hover {
+                background-color: #e0e0e5;
+            }
+
+            /* Anidación de un botón dentro de .card */
+            .button {
+                
+                padding: 10px 15px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                transition:  0.3s;
+
+                /* Hover para el botón */
+                &:hover {
+                    background-color: #0056b3;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Título de la Tarjeta</h2>
+        <p>Este es un ejemplo de tarjeta con anidación de CSS </p>
+        <a href="#" class="button">Más Información</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Animación</title>
+
+	<style type="text/css">
+	
+	@keyframes animacionCoche{ 
+			 /*Indicamos que salimos de la posición 0*/ 
+			
+			from{ left:0px; 
+			    /* transform: translate(0, 0); */	} 
+					
+			/*Indicamos que al final la posición debe ser 350*/
+			
+			to{ left:800px; 
+				/* transform: translate(800px, 0); */ } 
+		}
+
+	@keyframes cochesalto{
+			from{ top:50px;	}
+			
+			to{	top:45px;	}
+		}
+	
+	#coche{ 
+			 width: 224px;
+			 height: 213px; 
+			 animation-fill-mode: forwards;
+			 position:relative;
+			 animation-name: animacionCoche, cochesalto ;
+			 animation-duration: 3s, .2s; 
+			 animation-iteration-count:1,infinite;
+			 animation-timing-function: linear;
+			 animation-direction: alternate; 			
+			  
+		}
+
+		#contenedor{
+			
+			width:100%;
+			height:300px;
+			overflow:hidden;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="contenedor">
+        <img id="coche" src="img/Coche1.jpg"  />
+    </div>
+   
+</body>
+</html>

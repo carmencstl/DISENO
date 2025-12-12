@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax | Efecto Mouse Move</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body{
+            background-image: url(img/bg.png);
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+        .objeto{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .container{
+            overflow:hidden;
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+           
+
+        }
+       
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <img src="img/estrellas.png" class="objeto" data-value="2" >
+        <img src="img/satelite.png" class="objeto" data-value="-40">
+        <img src="img/nave.png" class="objeto" data-value="-60" >
+        <img src="img/meteorito-2.png" class="objeto" data-value="-10">
+        <img src="img/marte.png" class="objeto" data-value="-5" >
+       
+    </div>
+
+    <script type="text/javascript">
+
+        document.addEventListener("mousemove", parallax);
+        
+        function parallax(e) {
+
+            document.querySelectorAll(".objeto").forEach(function (mover) {
+               
+                var valorMovimiento = mover.getAttribute("data-value");
+                var x = (e.clientX * valorMovimiento) / 250;
+                var y = (e.clientY * valorMovimiento) / 250;
+                mover.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

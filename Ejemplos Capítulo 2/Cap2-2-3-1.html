@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Variables CSS globales */
+        :root {
+            --primary-color: #007bff;;
+            --success-color: #4fc96c;
+            --error-color: rgb(252, 93, 93);
+            --neutral-color: #6c757d;
+            --disabled-color: #ccc;
+            --placeholder-color: #999;
+            --font-size: 14px;
+            --font-family: Arial, sans-serif;
+            --border-radius: 4px;
+            
+        }
+        body{
+            background-color: #f4f4f4;
+            align-content: center;
+            height: 100vh;
+            margin: 0;
+            
+        }
+
+        /* Estilos generales del formulario */
+        .form {
+            font-family: var(--font-family);
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            
+            
+        }
+
+        .form__group {
+            margin-bottom: 15px;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: var(--neutral-color);
+        }
+
+        .form__input,
+        .form__checkbox {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid var(--neutral-color);
+            border-radius: var(--border-radius);
+            transition: all 0.3s;
+        }
+
+        /* Pseudoclases de estado para el input */
+        .form__input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 4px var(--primary-color);
+            outline: none;
+        }
+
+        /* Campos que están deshabilitados */
+        .form__input:disabled,
+        .form__button:disabled {
+            background-color: var(--disabled-color);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        /* Campo de solo lectura */
+        .form__input:read-only {
+            background-color: #e9ecef;
+            border-color: var(--neutral-color);
+            color: var(--neutral-color);
+        }
+
+        /* Estilo para los inputs que muestran el placeholder */
+        .form__input:placeholder-shown {
+            border-color: var(--neutral-color);
+            color: var(--placeholder-color);
+        }
+        .form__input:placeholder-shown:focus  {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 4px var(--primary-color);
+            outline: none;
+        }
+
+        /* Checkbox marcado */
+        .form__checkbox:checked {
+            outline: 2px solid var(--success-color);
+         
+            
+        }
+        
+        /* Estilo del botón */
+        .form__button {
+            display: inline-block;
+            width: 104%;
+            padding: 10px;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: var(--font-size);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form__button:enabled:hover {
+            background-color: #0056b3;
+        }
+
+        .form__button:focus {
+            
+            box-shadow: 0 0 4px var(--primary-color);
+        }
+
+    /**************   Pseudoclases de validación  **********************************/
+
+
+        input:valid {
+            border: 1px solid rgb(38, 248, 101);
+            
+        }
+
+        input:invalid {
+            
+            border-color: var(--error-color);
+            color: var(--neutral-color);
+        }
+
+       
+       /*  input:not(:focus):not(:placeholder-shown):invalid {
+            border-color: var(--error-color);
+           
+        } */
+
+        /******************  Validación  ***************************/
+
+        /********  Haciendo la verificación accesible ******/
+
+        .error-message {
+            display: none;
+            color:var(--error-color);
+            font-size: var(--font-size);
+        }
+
+        /*   input:invalid + .error-message{
+               border-color: red;
+               display: block;
+            } */
+        /* /solucion para no ver el mensaje mientras se escribe */
+
+        /*  #email:not(:focus):invalid{
+                border-color: red;
+                } */
+
+       /*  #email:not(:focus):invalid + .error-message {
+            display: block;
+            color: red;
+        } */
+
+        #email:not(:placeholder-shown):invalid + .error-message{
+            display: block;
+           
+        }
+    </style>
+</head>
+
+<body>
+    <form class="form" action="#" method="post">
+        <div class="form__group">
+            <label for="username" class="form__label">Username</label>
+            <input type="text" id="username" name="username" class="form__input" required
+                placeholder="Enter your username" maxlength="30" pattern="[a-zA-Z0-9]+" />
+        </div>
+
+        <div class="form__group">
+            <label for="email" class="form__label">Email</label>
+            <input type="email" id="email" name="email" class="form__input" required placeholder="Enter your email" />
+            <span class="error-message ">Necesita un email correcto</span>
+        </div>
+        <div class="form__group">
+            <label for="dni" class="form__label">DNI</label>
+            <input type="text" id="dni" class="form__input" required placeholder="DNI" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" />
+        </div>
+
+        <div class="form__group">
+            <label for="agree" class="form__label">I agree to the terms</label>
+            <input type="checkbox" id="agree" name="agree" class="form__checkbox" />
+        </div>
+
+        <div class="form__group">
+            <label for="readonly" class="form__label">Read-only Field</label>
+            <input type="text" id="readonly" name="readonly" class="form__input" value="Cannot edit" readonly />
+        </div>
+
+        <div class="form__group">
+            <label for="disabled-field" class="form__label">Disabled Field</label>
+            <input type="text" id="disabled-field" name="disabled-field" class="form__input" value="Not editable"
+                disabled />
+        </div>
+
+        <button type="submit" class="form__button" >Submit</button>
+    </form>
+
+</body>
+
+</html>

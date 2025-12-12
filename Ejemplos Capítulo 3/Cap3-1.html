@@ -1,0 +1,87 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Documento sin título</title>
+
+	<style type="text/css">
+
+		#container{
+			margin: auto;
+			background-color: transparent;
+			padding-top: 50px;
+		}
+		div {
+			margin-top: 20px;
+			margin-left: 40px;
+			width: 200px;
+			height: 100px;
+			background-color: red;
+		}
+
+		#sin {
+			width: 200px;
+			height: 100px;
+			background-color: rgba(0, 0, 0, 0.5);
+			position: absolute;
+
+		}
+
+		#rotado {
+			transform: rotate(10deg);
+			/* giro un número de grado sentido reloj*/
+			/* transform-origin: 50% 50%; */
+			/* desplaza el punto original de la rotación */
+			transform-origin: 50% 50%;
+		}
+
+		#inclinado {
+			transform: skew(35deg, 3deg);
+			/* inclino la capa x , y grados */
+
+
+		}
+
+
+		#escalado {
+
+			transform: scale(1.5, 0.6);
+			transform-origin: bottom left;
+		}
+
+
+		#traslado {
+
+			transform: translate(50px, 5px);
+
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- <div id="container">
+		Rotate:
+		<div id="sin"></div>
+		<div id="rotado">Esto está girado 10º</div> -->
+
+
+		Skew:
+		<div id="sin"></div>
+		<div id="inclinado">Esto está inclinado 35º X y 3º Y</div>
+
+		Scale:
+		<div id="sin"></div>
+		<div id="escalado">Esto está escalado x=1.5 y=0.6 </div>
+
+		Translate:
+		<div id="sin"></div>
+		<div id="traslado">Esto está desplazado x=50px e y=5px </div>
+	</div>
+
+
+</body>
+
+</html>

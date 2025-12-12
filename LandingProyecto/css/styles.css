@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
+    height: 300vh;
+}
+
+header{
+    display: flex;
+    grid-column: 1 / 13;
+    background-color:transparent;
+    padding: 20px;
+    margin: 50px;
+    text-align: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 1;
+    grid-row: 1 / 2;
+}
+
+ul{
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+main{
+    grid-row: 1 / 2;
+    grid-column: 1 / 13;
+    height:100vh;
+}
+
+
+ .hero__content{
+    background-image: url(../images/fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 10% 45% 45%;
+}
+
+
+.hero__content h1{
+    color: #074d69;
+    font-size: 3rem;
+    text-align: start;
+    padding-top: 200px;
+    
+}
+.hero_text{
+    grid-column: 2 / 7;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+#logo{
+    width:auto;
+    height: 100px;
+}
+
+.hero_cta{
+   grid-column: 3/5;
+    grid-row: 3/4;
+}
+
+button{
+    padding: 15px 15px;
+    font-size: 1rem;
+    color: white;
+    background-color: #074d69;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.benefits_content{
+    grid-column: 1 / 13;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: #F0F6F6;
+    height: 100vh;
+}
+
+.benefit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.gamificado h2, .gamificado p{
+    grid-column: 2 / 5;
+    grid-row: 1 / 2;
+}
+
+.gamificado img{
+     grid-column: 5/ 12;
+    grid-row: 1 / 2;
+}
+
+.comunidad{
+    grid-column: 8 / 12;
+    grid-row: 2 / 3;
+}
+
+.personalizable{
+    grid-column: 2 / 5;
+    grid-row: 3 / 4;
+}

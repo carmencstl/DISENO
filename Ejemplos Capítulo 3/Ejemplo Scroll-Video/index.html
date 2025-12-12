@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--  <link rel="stylesheet" href="styles.css"> -->
+    <title>Video Scroll Animation</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        height: 200vh;
+
+    }
+
+    .scroll-video {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Define como se adapta un video o una imagen al contenedor*/
+        display: block;
+        /* transform: scale(1.05);
+    transform-origin: center; */
+    }
+</style>
+
+<body>
+
+
+
+    <section class="scroll-video">
+        <video id="scrollVideo" preload="auto" src="video/video.mov"></video>
+    </section>
+
+
+
+
+</body>
+<script>
+    const video = document.getElementById("scrollVideo");
+
+    video.pause();
+    video.muted = true;
+
+    let currentFrame = 0;
+
+    // Esperar a que el vídeo conozca su duración
+    video.addEventListener("loadedmetadata", () => {
+
+        // Math.floor devuelve el mayor número entero menor o igual que n.
+        const totalFrames = Math.floor(video.duration * 30); // 30 FPS
+        console.log("Frames:" + totalFrames )
+
+        window.addEventListener("scroll", () => {
+            // Progreso del scroll
+            const scrollTop = window.scrollY;
+            console.log(window.scrollY);
+           const maxScroll = document.body.scrollHeight - window.innerHeight;
+
+            const progress = scrollTop / maxScroll;
+            console.log("Progreso:" + progress )
+
+            // Math.floor devuelve el mayor número entero menor o igual que n.
+             currentFrame = Math.floor(progress * totalFrames);
+             console.log("Frame actual:" + currentFrame )
+            // Aplicamos el frame correspondiente
+            video.currentTime = currentFrame / 30; // 30 fps
+
+            //video.currentTime = Math.floor(scrollTop/100);
+        });
+    });
+
+</script>
+<!-- <script src="script.js"></script> -->
+
+</html>

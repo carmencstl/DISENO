@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejemplo Flex-Box</title>
+
+	<style type="text/css">
+
+		.flex-container{
+			width: 250px;
+			height: 140px;
+			padding:5px;
+			margin: 10px;
+			background-color:#124678;
+			display:-webkit-flex; 
+			display: -ms-flexbox; 
+			display: flex;
+		}
+		.flex-item{
+			
+			width:50px;
+			height:50px;
+			background-color:#ccc;
+			margin:5px;
+		}
+		.flex-item p{
+			width:100%; 
+			text-align:center; 
+		 
+		}
+		
+		.title{
+			text-align:center;
+			color:rgb(0,153,153);
+			font-family:helvetica;
+		}
+
+		.flex-container.flex-row{ 
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row; 
+		}
+
+
+
+
+		.flex-container.row-reverse{ 
+		    -webkit-flex-direction: row-reverse;
+			-ms-flex-direction: row-reverse;
+			flex-direction: row-reverse; 
+		}
+		.flex-container.flex-column{ 
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column; 
+			height: 175px;}
+		
+		.flex-container.column-reverse{ 
+			-webkit-flex-direction: column-reverse;
+			-ms-flex-direction: column-reverse;
+			flex-direction: column-reverse; 
+			height: 175px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title"> Ejemplos de la propiedad flex-direction </h1>
+	<div >
+	    <h1>row</h1>
+	    <div class="flex-container flex-row">
+	      <div class="flex-item">
+	        <p>1</p>
+	      </div>
+	      <div class="flex-item">
+	        <p>2</p>
+	      </div>
+	      <div class="flex-item">
+	        <p>3</p>
+	      </div>
+	    </div>
+	    
+	  
+
+  
+    <h1>row-reverse</h1>
+    <div class="flex-container row-reverse">
+      <div class="flex-item">
+        <p>1</p>
+      </div>
+      <div class="flex-item">
+        <p>2</p>
+      </div>
+      <div class="flex-item">
+        <p>3</p>
+      </div>
+    </div>
+  
+
+  
+    <h1>column</h1>
+    <div class="flex-container flex-column">
+      <div class="flex-item">
+        <p>1</p>
+      </div>
+      <div class="flex-item">
+        <p>2</p>
+      </div>
+      <div class="flex-item">
+        <p>3</p>
+      </div>
+    </div>
+  
+
+  
+    <h1>column-reverse</h1>
+    <div class="flex-container column-reverse">
+      <div class="flex-item">
+        <p>1</p>
+      </div>
+      <div class="flex-item">
+        <p>2</p>
+      </div>
+      <div class="flex-item">
+        <p>3</p>
+      </div>
+    </div>
+ </div>
+
+</body>
+</html>

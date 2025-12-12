@@ -1,0 +1,53 @@
+<!doctype html>
+<html >
+<head>
+  <meta charset="utf-8" />
+  
+  <title>Ejemplo prespectica</title>
+	<style>
+		div {
+		    height: 150px;
+		    width: 150px;	   
+
+		}
+		#contenedor {
+		    border: 1px solid black;
+		    perspective: 500px;
+			margin: 150px auto;
+		}
+		#contenido {
+		    background-color: rgb(119, 0, 255);
+
+		    transform-style: preserve-3d; 
+          
+		    transform:rotateY(50deg); 
+		    width: 100%;
+      		height: 100%;
+      			
+      		position: relative;
+      		   
+		}
+		.hijo {
+		    transform-origin: top;
+		    transform: rotateX(45deg) ;
+		    position: absolute;
+		    background-color: lime;
+		}
+		.hijo2 {
+		    transform-origin: center;
+		    transform: rotateY(45deg) ;
+			background-color: red;
+			position: absolute;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="contenedor">
+	    <div id="contenido">
+			<div class="hijo"></div>
+			<div class="hijo2"></div>
+			
+	    </div>
+	</div>
+</body>

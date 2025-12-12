@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudoclases en acción</title>
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --white-color: #e7e5e5;
+      --background-color: #f8f9fa;
+      --font-family: 'Arial', sans-serif;
+      --button-padding: 10px 20px;
+      --border-radius: 4px;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--background-color);
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    /* ===== BOTONES ===== */
+    button {
+      padding: var(--button-padding);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s;    
+      margin: 10px;
+    }
+
+    /* Botón primario */
+    .button-primary {
+      background-color: var(--primary-color);
+      color: var(--white-color);
+    }
+
+    .button-primary:hover {
+      background-color: color-mix(in srgb, var(--primary-color), white 25%);
+      transform: translateY(-2px);
+    }
+
+    .button-primary:active {
+      background-color: color-mix(in srgb, var(--primary-color), black 25%);
+      transform: translateY(1px);
+    }
+
+    .button-primary:focus {
+      outline: 3px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
+    /* Botón secundario */
+    .button-secondary {
+      background-color: var(--secondary-color);
+      color: var(--white-color);
+    }
+
+    .button-secondary:hover {
+      background-color: color-mix(in srgb, var(--secondary-color), white 25%);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary:active {
+      background-color: color-mix(in srgb, var(--secondary-color), black 25%);
+      transform: translateY(1px);
+    }
+
+    .button-secondary:focus {
+      outline: 3px solid var(--secondary-color);
+      outline-offset: 2px;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <h2>Ejemplo de pseudoclases</h2>
+
+  <button class="button-primary">Primary Button</button>
+  <button class="button-secondary">Secondary Button</button>
+
+ 
+
+</body>
+
+</html>
