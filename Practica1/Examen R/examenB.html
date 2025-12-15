@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRACTICA 1</title>
+
+    <style>
+        @font-face {
+            font-family: 'fuente';
+            src: url('miFuente.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: fuente;
+            display: flex;
+            flex-direction: column;
+            min-height: 200vh;
+            overflow-x: hidden;
+            background-color: white;
+        }
+
+        header {
+            width: 100%;
+            background-color: white;
+            text-align: center;
+            height: 5vh;
+            justify-self: flex-start;
+            align-content: center;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            height: 80vh;
+            background-color: lightgray;
+            padding-top: 10vh;
+
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 110%;
+            color: transparent;
+            ;
+            font-size: 2em;
+        }
+
+        #uno {
+            background-color: #FFBD42;
+        }
+
+        #dos {
+            background-color: #FFA500;
+        }
+
+        #tres {
+            background-color: #01C3EA;
+        }
+
+        #cuatro {
+            background-color: #DF3C3C;
+        }
+
+        main div:hover {
+            color: white;
+            transition: 1s;
+            cursor: pointer;
+            width: 200%;
+        }
+
+
+        footer {
+            width: 100%;
+            background: linear-gradient(-45deg, #EE7752,
+                    #E73C7E, #23A6D5, #23D5AB);
+            text-align: center;
+            height: 15vh;
+            justify-self: flex-end;
+            align-content: center;
+            color: white;
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+
+        }
+
+        input {
+            margin-top: 2vh;
+            font-size: 1em;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 5px 2px #ffffff;
+            border: none;
+            transition: 1s;
+        }
+
+        input:not(:placeholder-shown) {
+            background-color: aquamarine;
+            color: #fefefe;
+        }
+
+        .caja {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(255, 212, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: change linear;
+            margin-top: 50px;
+            animation-timeline: view();
+        }
+
+        @keyframes change {
+            from {
+                scale: 0;
+                opacity: 0
+            }
+
+            to {
+                scale: 1.28;
+                opacity: 1;
+            }
+        }
+
+        /* haz una animacion para el degradado del fondo del footer */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        @media (max-width: 640px) {
+            main {
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            main div {
+                width: 100%;
+                height: 90%;
+            }
+
+            main div:hover {
+                height: 200%;
+            }
+
+               .caja {
+            width: 100%;
+            height: 100px;
+            background-color: rgb(255, 212, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            animation: change linear;
+            animation-timeline: view();
+        }
+
+
+            @keyframes change {
+                from {
+                     transform: scaleY(1);
+                }
+
+                to {
+                    transform: scaleY(2);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Carmen Castillo Gaitán</h1>
+    </header>
+    <main>
+        <div id="uno">Uno</div>
+        <div id="dos">Dos</div>
+        <div id="tres">Tres</div>
+        <div id="cuatro">Cuatro</div>
+    </main>
+    <footer>
+        <h2>footer</h2>
+        <input type="text" id="name" name="name" placeholder="Name">
+    </footer>
+
+    <div class="caja"></div>
+</body>
+
+</html>
