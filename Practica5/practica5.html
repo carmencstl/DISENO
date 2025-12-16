@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 5</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: rgb(27, 27, 66);
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            justify-self: flex-start;
+            align-content: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: rgb(70, 195, 245);
+            font-size: 3em;
+            font-family: 'Arial', sans-serif;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+
+            0% {
+                text-shadow: 0 0 5px #FF54B7, 0 0 10px #FF54B7, 0 0 20px #FF54B7, 0 0 40px #FF54B7;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #FF54B7, 0 0 30px #FF54B7, 0 0 40px #FF54B7, 0 0 60px #FF54B7;
+            }
+
+            100% {
+                text-shadow: 0 0 5px #FF54B7, 0 0 10px #FF54B7, 0 0 20px #FF54B7, 0 0 40px #FF54B7;
+            }
+        }
+
+        span {
+            display: flex;
+            justify-self: center;
+            width: 80%;
+            height: 2px;
+            background: #74666e;
+            margin-bottom: 20px;
+            animation: scan 3s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(0px);
+            }
+
+            100% {
+                transform: translateY(200px);
+            }
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            gap: 20px;
+        }
+
+        div {
+            background-color: white;
+            width: 250px;
+            height: 300px;
+            margin: 20px;
+
+        }
+    
+
+
+        .foto {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .verano {
+            background-color: aqua;
+        }
+
+        .recuerdos {
+            background-color: orange;
+        }
+
+        .aventuras {
+            background-color: lightgreen;
+        }
+
+        .momentos {
+            background-color: pink;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .polaroid {
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .polaroid:hover {
+
+            transform: rotate(0deg) translateY(-20px) scale(1.05);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 8px 16px 0 rgba(255, 77, 216, 0.3), 0 12px 40px 0 rgba(218, 125, 255, 0.25);
+        }
+
+        .Uno {
+            transform: rotate(-10deg);
+        }
+
+        .Dos {
+            transform: rotate(5deg);
+        }
+
+        .Tres {
+            transform: rotate(-5deg);
+        }
+
+        .Cuatro {
+            transform: rotate(10deg);
+        }
+
+        .cassete {
+            width: 400px;
+            height: 300px;
+            background-color: rgb(39, 38, 38);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            box-shadow: inset 0 0 10px #747474;
+        }
+
+        .nombre {
+            display: flex;
+            width: 320px;
+            height: 80px;
+            background-color: rgb(255, 248, 248);
+            border-radius: 5px;
+            margin-top: 30px;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        .barraLuz {
+            
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <span></span>
+        <h1>Practica 5</h1>
+    </header>
+    <main>
+            <div class="polaroid Uno">
+                <div class="foto verano"></div>
+                <p>Verano</p>
+            </div>
+            <div class="polaroid Dos">
+                <div class="foto recuerdos "></div>
+                <p>Recuerdos</p>
+            </div>
+            <div class="polaroid Tres">
+                <div class="foto aventuras"></div>
+                <p>Aventuras</p>
+            </div>
+            <div class="polaroid Cuatro">
+                <div class="foto momentos"></div>
+                <p>Momentos</p>
+            </div>
+    </main>
+            <div class="cassete">
+                <div class="nombre">Mix Tape </div>
+            </div>
+            <span class="barraLuz"></span>
+</body>
+
+</html>
