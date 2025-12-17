@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<di>, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
+        body {
             background-color: blanchedalmond;
         }
-        #cubo{
+
+        #cubo {
             width: 80px;
             height: 80px;
             border-radius: 5%;
@@ -17,70 +19,89 @@
             box-shadow: -4px -4px rgb(236, 112, 66) inset;
             position: absolute;
             left: 400px;
-            transform-origin: 50% 100%;			
-			animation-name: SubirBajar,Estirar ;
-			animation-duration: 1s, 1s; 
-			animation-iteration-count:infinite;
-			animation-timing-function: ease-in-out;
-			animation-direction: alternate;
+            transform-origin: 50% 100%;
+            animation-name: SubirBajar, Estirar;
+            animation-duration: 1s, 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
         }
-        @keyframes SubirBajar{
-            0%{
-               /*  transform: translateY(20px); */
-               top: 0px;
-            }50%{top:300px}
-            100%{
-               /*  transform:translateY(200px); */
-               top:300px
+
+        @keyframes SubirBajar {
+            0% {
+                /*  transform: translateY(20px); */
+                top: 0px;
+            }
+
+            50% {
+                top: 300px
+            }
+
+            100% {
+                /*  transform:translateY(200px); */
+                top: 300px
             }
         }
-        @keyframes Estirar{
-            0%,35%{
-                transform: scale(1,1);
-                
+
+        @keyframes Estirar {
+
+            0%,
+            35% {
+                transform: scale(1, 1);
+
             }
-            100%{
-                transform:scale(2,0.5);
+
+            100% {
+                transform: scale(2, 0.5);
             }
         }
-        #sombra{
+
+        #sombra {
             position: absolute;
             width: 100px;
             height: 30px;
-            top:367px;
+            top: 367px;
             left: 385px;
             border-radius: 50%;
             background-color: darkgrey;
             box-shadow: -4px -4px rgb(161, 159, 158) inset;
-           
-            transform-origin: 50% 100%;			
-			animation-name: sombra ;
-			animation-duration:  1s; 
-			animation-iteration-count:infinite;
-			animation-timing-function: ease-in-out;
-			animation-direction: alternate;
+
+            transform-origin: 50% 100%;
+            animation-name: sombra;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
             z-index: -1;
 
         }
-        @keyframes sombra{
-            0%{
-                transform: scale(1,1);
+
+        @keyframes sombra {
+            0% {
+                transform: scale(1, 1);
                 opacity: 0.1;
-           
-            }50%{opacity: 1}
-            100%{
-                transform: scale(2,1);
+
+            }
+
+            50% {
+                opacity: 1
+            }
+
+            100% {
+                transform: scale(2, 1);
                 opacity: 1;
-               
+
             }
         }
     </style>
 </head>
+
 <body>
     <div id="container">
         <div id=cubo></div>
     </div>
     <div id="sombra"> </div>
-    
+
 </body>
+
 </html>

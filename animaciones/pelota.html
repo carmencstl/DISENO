@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelota Animación</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pelota {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            animation: bounce 2s infinite;
+            margin-bottom: 400px;
+            position: absolute;
+            bottom: 300px;
+        }
+
+        .sombra {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #333;
+            height: 10px;
+            width: 100px;
+            border-radius: 50%;
+            align-self: flex-end;
+            background: radial-gradient(
+                ellipse at center,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0) 80%
+            );
+            position: absolute;
+            z-index: -1;
+    
+            animation: sombra 2s infinite;
+        }
+
+        @keyframes sombra {
+            0%,
+            100% {
+                width: 100px;
+            }
+
+            50% {
+                width: 150px;
+            }
+            
+        }
+
+        
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+
+            }
+
+            50% {
+                transform: translateY(250px);
+                width: 150px;
+            } 
+        }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <div class="pelota"></div>
+        <div class="sombra"></div>
+
+    </main>
+</body>
+
+</html>
